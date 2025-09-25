@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import ChatApp from './CounterApp';
+import CommentApp from './ColorChangerApp';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 
-export default function App() {
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {/* Chat Section */}
+      <View style={styles.section}>
+        <CounterApp />
+      </View>
+
+      {/* Comment Section */}
+      <View style={styles.section}>
+        <ColorChangerApp />
+      </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1, 
+    flexDirection: 'column', 
+  },
+  section: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderWidth: 1, 
+    borderColor: '#ccc',
   },
 });
+
+export default App;
